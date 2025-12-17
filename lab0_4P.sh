@@ -1,11 +1,11 @@
-wc -l lab0/delcatty1/finneon lab0/elgyem2/banette lab0/elgyem2/pidgeot lab0/elgyem2/eevee 2>&1 | sort -
+wc -l lab0/delcatty1/finneon lab0/elgyem2/banette lab0/elgyem2/pidgeot lab0/elgyem2/eevee | sort -n
 
-ls -lR lab0 2>&1 | grep 'on' | sort -rnk | tail -n 3
+ls -dlR lab0 | grep 'on' | grep -v '/' | sort -rnk5 | tail -3
 
-ls -r lab0 2>/tmp/lab0_errors.log | head 'l' | cat -n | sort -k2
+find lab0 -type f -name 'l*' -exec cat -n {} \; 2>/tmp/lab0_errors.log | sort -k2
 
-ls -lt lab0/delcatty1 2>/tmp/lab0_errors.log | sort
+ls -ltr lab0/delcatty1 2>/tmp/lab0_errors.log | sort
 
-ls -r lab0/nidorina8 2>&1| sort
+find lab0/nidorina8 -type f | sort -r
 
-ls lab0/elgyem2 2>&1 | sort
+find lab0/elgyem2 -type f | sort
